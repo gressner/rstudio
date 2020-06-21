@@ -808,8 +808,9 @@ public class PaneManager
    {
       ArrayList<LogicalWindow> results = new ArrayList<>();
 
+      // Do not include hiddenTabSet in panes since it should never be displayed
       JsArrayString panes = config.getQuadrants();
-      for (int i = 0; i < panes.length(); i++)
+      for (int i = 0; i < 4; i++)
       {
          results.add(panesByName_.get(panes.get(i)));
       }
